@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生产</title>
+		<link rel="stylesheet" type="text/css" href="./css/General_framework.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/production.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div id="top">
+				<div id="close">
+					<img src="./img/返回.svg" @click="goback()">
+				</div>
+				<div id="welcome">
+					<ul class="oneMenu">
+						<li class="welecomTitle">
+							{{Udata.CompanyName}}
+							<ul class="twoMenu">
+								
+								<li class="signout"><a href="index.html">退出登入<img src="./img/退出.svg"></a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div id="bottom">
+				<p class="MainTitle">{{title}}</p>
+
+				<div id="function_body">
+					<div class="DrugName">
+						<span>
+							药物名称：
+						</span>
+						<select v-model="DrugID">
+							<option value="0" disabled>请选择</option>
+							<option v-for="item in DrugType" :value="item.DrugID ">{{item.DrugName}}</option>
+						</select>
+					</div>
+					<div class="ProductionDate">
+						<span>
+							生产日期：
+						</span>
+						<input type="date" v-model="ProductionDate" />
+					</div>
+					<div class="explanation">
+						{{explanation}}
+					</div>
+					<div id="cancelButton">
+						<button type="button" class="cancel" @click="goback()">返回</button>
+					</div>
+					<div id="determineButton">
+						<button type="button" class="determine" @click="productionDrug()">确定</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/Jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/production.js"></script>
+	</body>
+</html>

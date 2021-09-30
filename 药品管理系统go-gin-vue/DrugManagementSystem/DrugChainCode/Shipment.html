@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>发货</title>
+		<link rel="stylesheet" type="text/css" href="./css/General_framework.css" />
+		<link rel="stylesheet" type="text/css" href="./css/Shipment.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div id="top">
+				<div id="close">
+					<img src="./img/返回.svg" @click="goback()">
+				</div>
+				<div id="welcome">
+					<ul class="oneMenu">
+						<li class="welecomTitle">
+							{{Udata.CompanyName}}
+							<ul class="twoMenu">
+
+								<li class="signout"><a href="index.html">退出登入<img src="./img/退出.svg"></a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div id="bottom">
+				<p class="MainTitle">{{title}}</p>
+				<div id="function_body">
+					<table>
+						<tr>
+							<th class="DrugCode borderRight">药物链码</th>
+							<th class="DrugName borderRight">药物名称</th>
+							<th class="ProductionDate borderRight">生产日期</th>
+							
+							<th class="ProductionCompany borderRight">生产公司</th>
+							<th>发货</th>
+						</tr>
+						<tr v-for="(item,index) in warehouseDateJSON[Page]" v-if="item.OptStatus!=0">
+							<td class="DrugCode borderRight">{{item.DrugCode}}</td>
+							<td class="DrugName borderRight">{{item.DrugName}}</td>
+							<td class="ProductionDate borderRight">{{item.ProductionDate}}</td>
+							
+							<td class="ProductionCompany borderRight">{{item.ProductionCompany}}</td>
+							<td><button type="button" class="shipment" @click="prepareShipment(item.DrugCode,item.DrugID)">发货</button></td>
+						</tr>
+
+					</table>
+				</div>
+				<div id="previousPage" @click="previousPage()">
+					<img src="img/翻页1.svg">
+				</div>
+				<div id="nextPage" @click="nextPage()">
+					<img src="img/翻页2.svg">
+				</div>
+				
+				
+				
+				<div id="prepareShipmentBox" v-if="isShowprepareShipment">
+					<div class="prepareShipmentDrugCodetext">药物：{{prepareShipmentDrugCode}}</div>
+					<div class="Receive">
+						<span>将发往至：</span>
+						<select v-model="ReceiveID">
+							<option value="0" disabled="disabled">请选择</option>
+							<option v-for="(item,index) in Receives" :value ="item.UID">{{item.CompanyName}}</option>
+						</select>
+					</div>
+					<div id="cancelButton">
+						<button type="button" class="cancel" @click="closePrepareShipment()">返回</button>
+					</div>
+					<div id="determineButton">
+						<button type="button" class="determine" @click="Shipment()">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/Jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/Shipment.js"></script>
+	</body>
+</html>

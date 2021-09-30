@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>研发</title>
+		<link rel="stylesheet" type="text/css" href="./css/General_framework.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/R&D.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div id="top">
+				<div id="close">
+					<img src="./img/返回.svg" @click="goback()">
+				</div>
+				<div id="welcome">
+					<ul class="oneMenu">
+						<li class="welecomTitle">
+							{{Udata.CompanyName}}
+							<ul class="twoMenu">
+								<li class="signout"><a href="index.html">退出登入<img src="./img/退出.svg" ></a></li>
+							</ul>
+						</li>
+					</ul>
+			
+				</div>
+			
+			</div>
+
+			<div id="bottom">
+				<p class="MainTitle">{{title}}</p>
+
+				<div id="function_body">
+					<div class="DrugName">
+						<span>
+							药物名称：
+						</span>
+						<input type="text" id="DrugName" v-model="DrugName" />
+					</div>
+					<div class="DrugComposition">
+						<span>
+							药物成分：
+						</span>
+						<input type="text" id="DrugComposition" v-model="DrugComposition" />
+					</div>
+					<div class="UsageMethod">
+						<span>
+							使用方法：
+						</span>
+						<input type="text" id="UsageMethod" v-model="UsageMethod" />
+					</div>
+					<div class="MainFunction">
+						<span>
+							主治功能：
+						</span>
+						<input type="text" id="MainFunction" v-model="MainFunction" />
+					</div>
+					<!-- <div class="explanation">
+						{{explanation}}
+					</div> -->
+					<div id="cancelButton">
+						<button type="button" class="cancel" @click="goback()">返回</button>
+					</div>
+					<div id="determineButton">
+						<button type="button" class="determine" @click="addDrugType()">确定</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/Jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/R&D.js"></script>
+	</body>
+</html>

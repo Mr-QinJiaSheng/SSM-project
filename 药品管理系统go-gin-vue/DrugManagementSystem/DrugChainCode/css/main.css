@@ -1,0 +1,211 @@
+
+
+#FunctionalModule1,
+#FunctionalModule2,
+#FunctionalModule3,
+#FunctionalModule4,
+#FunctionalModule5,
+#FunctionalModule6,
+#FunctionalModule7,
+#FunctionalModule8 {
+	position: absolute;
+	padding-top: 10px;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	top: 30%;
+}
+
+#FunctionalModule5,
+#FunctionalModule6,
+#FunctionalModule7,
+#FunctionalModule8 {
+	top: 63%;
+
+}
+
+#FunctionalModule1,
+#FunctionalModule5 {
+	left: 15%;
+}
+
+#FunctionalModule2,
+#FunctionalModule6 {
+	left: 35%;
+}
+
+#FunctionalModule3,
+#FunctionalModule7 {
+	right: 35%;
+}
+
+#FunctionalModule4,
+#FunctionalModule8 {
+	right: 15%;
+}
+
+
+
+
+
+/* 设置生产弹窗 */
+#productionDialogBox {
+	width: 400px;
+	height: 300px;
+
+	position: absolute;
+	top: 27%;
+	left: 39%;
+
+	text-align: center;
+
+
+}
+
+#productionDialogBox .DialogBox-title {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	background-color: #2A4F4F;
+	padding-top: 10px;
+
+}
+
+#productionDialogBox .title {
+	background-color: #568686;
+
+	margin: auto;
+
+	width: 150px;
+	height: 40px;
+	font-size: 30px;
+	color: #bfbfbf;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+#productionDialogBox .DialogBox-body {
+
+	text-align: left;
+
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+
+	background-color: #396868;
+}
+
+#productionDialogBox .DrugName,
+#productionDialogBox .ProductionDate {
+	height: 50px;
+	width: 300px;
+	line-height: 50px;
+
+	margin: auto;
+	margin-top: 30px;
+	background-color: #396868;
+	color: #bfbfbf;
+}
+
+#productionDialogBox .DrugName select,
+#productionDialogBox .ProductionDate input {
+	line-height: 10px;
+	width: 200px;
+	height: 45px;
+	BACKGROUND-COLOR: transparent;
+	border: 0px;
+	border-bottom: 1px #FFFFFF solid;
+	font-size: 16px;
+	outline: none;
+	color: #bfbfbf;
+}
+
+/* 设置药物研发弹窗 */
+#RAndDBox {
+	width: 400px;
+	height: 300px;
+
+	position: absolute;
+	top: 27%;
+	left: 39%;
+
+	text-align: center;
+
+
+}
+
+#RAndDBox .DialogBox-title {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	background-color: #959DAD;
+	padding-top: 10px;
+
+}
+
+#RAndDBox .title {
+	background-color: #959DAD;
+
+	margin: auto;
+
+	width: 150px;
+	height: 40px;
+	font-size: 30px;
+	color: #bfbfbf;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+#RAndDBox .DialogBox-body {
+
+	text-align: left;
+
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+
+	background-color: #959DAD;
+}
+
+
+/* 设置取消和确认按钮 */
+
+#cancelButton,
+#determineButton {
+	position: absolute;
+	bottom: 0px;
+	margin-bottom: 10px;
+
+}
+
+#cancelButton {
+	left: 30px;
+}
+
+#determineButton {
+	right: 30px;
+}
+
+#cancelButton .cancel,
+#determineButton .determine {
+	width: 130px;
+	height: 40px;
+
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 25px;
+}
+
+#cancelButton .cancel {
+	float: left;
+	background-color: #568686;
+	color: #bfbfbf;
+}
+
+#determineButton .determine {
+	float: right;
+	background-color: #96CBB7;
+	color: #1E1E1E;
+}

@@ -1,0 +1,106 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:active {
+
+	color: #000000;
+	text-decoration: none;
+}
+#app {
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	position: absolute;
+	background-image: url(../img/background1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+}
+
+#top {
+	width: 100%;
+	height: 75px;
+
+}
+
+
+#close{
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
+
+#welcome {
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	 z-index: 1;
+	
+}
+
+/* 消除样式 */
+ul,
+li {
+	list-style: none;
+}
+
+.oneMenu {
+	/* 设置边距 */
+	margin-right: 20px;
+	margin-top: 20px;
+	/* 浮动 */
+	float: right;
+	/* 设置字体 */
+	font-size: 30px;
+}
+
+.twoMenu {
+	
+	/* 设置行高 */
+	height: 50px;
+	line-height: 50px;
+	/* 设置字体 */
+	letter-spacing: 5px;
+	font-size: 22px;
+	text-align: right;
+	
+	/* 设置背景图 */
+}
+.twoMenu img{
+	 vertical-align: middle;
+}
+#top a:link,
+#top a:visited {
+	display: block;
+	/*给a标签设置成块级元素*/
+	width: 100%;
+	height: 100%;
+}
+
+#bottom {
+	width: 100%;
+	position: absolute;
+	top: 75px;
+	bottom: 0px;
+	left: 0px;
+
+}
+
+#bottom .MainTitle {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 100%;
+	font-size: 50px;
+	/* 设置字符间距 */
+	letter-spacing: 5px;
+	text-align: center;
+}
