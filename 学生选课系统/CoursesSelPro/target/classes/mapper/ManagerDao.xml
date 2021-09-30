@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.origin.dao.ManagerDao">
+ 
+    <select id="checkAdmin" resultType="Manager" parameterType="Manager">
+        SELECT * FROM manager WHERE mname=#{mName} AND mpass = #{mPass}
+    </select>
+
+    <select id="selectAdminById" resultType="Manager" parameterType="int">
+        SELECT * FROM manager WHERE mid=#{id}
+    </select>
+    
+    <update id="updateMPass" parameterType="Manager">
+        UPDATE Manager SET
+        mPass=#{mPass}
+        WHERE mId=#{mId}
+    </update>
+    
+     <select id="queryAllTea" resultType="Teacher">
+        SELECT * FROM Teacher
+    </select>
+    
+    <select id="queryCourseById" parameterType="int" resultType="Course">
+        SELECT * FROM Course WHERE teaId=#{id}
+    </select>
+    
+    
+     <select id="selectClassNameByCId" parameterType="int" resultType="Course">
+        SELECT * FROM Course WHERE classId=#{id}
+    </select>
+    
+    
+    <select id="queryAllStu" resultType="Student">
+        SELECT * FROM Student
+    </select>
+    
+    <select id="queryCheckedcourseById" parameterType="int" resultType="int">
+        SELECT classId FROM course_choose WHERE stuId=#{id}
+    </select>
+    
+    <select id="queryTeacherBytId" parameterType="int" resultType="Teacher">
+        SELECT * FROM Teacher WHERE teaId=#{id}
+    </select>
+    
+    <select id="queryTeacherBytName" parameterType="String" resultType="Teacher">
+        SELECT * FROM Teacher WHERE teaName  LIKE  concat(concat('%',#{username}),'%')
+    </select>
+    
+   <insert id="addTeacher"   parameterType="Teacher">
+       insert into teacher(teaId,teaName,teaPass) values (#{teaId},#{teaName},#{teaPass})
+    </insert>
+    
+    <insert id="addStudent"   parameterType="Student">
+       insert into student(stuId,stuName,stuPass,insId,insName) values (#{stuId},#{stuName},#{stuPass},#{insId},#{insName})
+    </insert>
+    
+    <select id="queryStudentBysId" parameterType="int" resultType="Student">
+        SELECT * FROM student WHERE stuId=#{id}
+    </select>
+    
+    <select id="queryStudentBysName" parameterType="String" resultType="Student">
+        SELECT * FROM student WHERE stuName  LIKE concat(concat('%',#{username}),'%')
+    </select>
+    
+     <delete id="deleteTeacherByTid" parameterType="int">
+        DELETE FROM teacher WHERE teaId=#{id}
+    </delete>
+    
+    <delete id="deleteStudentBySid" parameterType="int">
+        DELETE FROM student WHERE stuId=#{id}
+    </delete>
+    
+    <select id="queryCourseByClassId" parameterType="int" resultType="Course">
+        SELECT * FROM Course WHERE classId=#{id}
+    </select>
+</mapper>

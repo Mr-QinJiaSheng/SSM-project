@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="commons-fileupload-1.3.3">
+    <CLASSES>
+      <root url="jar://F:/struts-2.5.14.1/lib/commons-fileupload-1.3.3.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/commons-io-2.5.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/commons-lang3-3.6.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/freemarker-2.3.26-incubating.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/log4j-api-2.9.1.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/ognl-3.1.15.jar!/" />
+      <root url="jar://F:/struts-2.5.14.1/lib/struts2-core-2.5.14.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
