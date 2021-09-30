@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.qin.mapper.CartMapper" >
+<resultMap id="BaseResultMap" type="cn.qin.pojo.Cart" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goodsname" property="goodsname" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DOUBLE" />  
+  </resultMap>
+<select id="selectGoodsById" parameterType="int" resultType="cn.qin.pojo.Cart">
+select * from cart where goodsid=${value}
+</select>
+<update id="updatecount" parameterType="cn.qin.pojo.Cart">
+update  cart set goodscount = ${goodscount} where id=${id}
+</update>
+<insert id="insertgoods" parameterType="cn.qin.pojo.Cart">
+INSERT INTO cart (userid,goodsid,goodsname,goodsprice,goodscount) value(${userid},${goodsid},'${goodsname}',${goodsprice},${goodscount})
+</insert>
+<select id="selectcartByUserId" parameterType="int" resultMap="BaseResultMap">
+select * from cart where userid=${value}
+</select>
+
+<delete id="deleteAll" >
+	delete from cart
+</delete>
+<delete id="deleteCartById" parameterType="int">
+delete from cart where id=${value}
+</delete>
+</mapper>

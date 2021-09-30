@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!--全局setting配置，根据需要配置  -->
+
+<!--批量扫描别名  -->
+<typeAliases>
+	<package name="cn.qin.pojo"/>
+</typeAliases>
+
+<!--配置mapper  -->
+<mappers>
+<!--使用spring和mybatis的整合包进行mapper扫描，不需要再配置  -->
+</mappers>
+
+</configuration>

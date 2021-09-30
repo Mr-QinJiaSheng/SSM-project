@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- db.properties文件 -->
+		<context:property-placeholder location="classpath:db.properties"/>
+	<!-- DataSource -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	    <property name="driverClass" value="${jdbc.driver}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+
+	</bean>
+	
+	
+	
+	<!-- sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 加载mybatis的全局配置文件，指定mybatis的配置文件classpath: 可省略,不建议 -->
+		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+    </bean>
+    
+    <!-- mapper扫描 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!-- 扫描包路径，如果需要扫描多个包，中间使用半角逗号隔开 -->
+    <property name="basePackage" value="cn.qin.mapper"></property>
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+	</beans>
